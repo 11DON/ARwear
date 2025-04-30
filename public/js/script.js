@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
 
     $(".fade-in-text").each(function(index){
@@ -31,6 +33,7 @@ $(document).ready(function(){
 const smallParag = document.querySelector('.smallParag');
 const phonePic2 = document.querySelector(".phonePic2");
 const slogan =  document.querySelector('.slogan');
+const productBoxs = document.querySelectorAll('.prodcut-box');
 
 const observer = new IntersectionObserver((entries,observer) => {
     entries.forEach(entry => {
@@ -47,3 +50,6 @@ const observer = new IntersectionObserver((entries,observer) => {
 observer.observe(smallParag);
 observer.observe(phonePic2);
 observer.observe(slogan);
+productBoxs.forEach(box => {
+    observer.observe(box);
+})
