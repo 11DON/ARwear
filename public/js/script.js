@@ -53,3 +53,23 @@ observer.observe(slogan);
 productBoxs.forEach(box => {
     observer.observe(box);
 })
+
+// Cart Open CLose
+let cartIcon = document.querySelector("#cart-icon");
+let cart = document.querySelector(".cart");
+let closeCart = document.querySelector("#close-cart");
+// Open Cart
+cartIcon.onclick = () => {
+  cart.classList.add("active");
+};
+// Close Cart
+closeCart.onclick = () => {
+  cart.classList.remove("active");
+};
+// Adding to cart
+// Cart Using JS
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
+}

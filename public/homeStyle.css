@@ -19,12 +19,98 @@ html{
     padding-bottom: 20rem;
 }
 
-/* Some Variables */
-:root {
-    --animation--paragraph: 20%;
-    --animation--brief: -50%
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--container-color);
+    box-shadow: 0 1px 4px hsla(0, 0%, 98%, 0.1);
+    z-index: 100;
 }
 
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--container-color);
+    box-shadow: -2px 0 4px hsl(0, 4%, 15%/10%);
+    transition: 0.3s cubic-bezier(0.075,0.82,0.165,1);
+}
+
+.cart.active{
+    opacity: 0.5;
+    right: 0;
+    transition: 0.3s cubic-bezier(0.075,0.82,0.165,1);
+    background-color: white;
+}
+
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top:2rem ;
+}
+
+.logo{
+    font-size: 1.1rem;
+    color: var(--bg-color);
+    font-weight: 500;
+}
+
+#cart-icon{
+    position: relative;
+    cursor: pointer;
+}
+
+#cart-icon[data-quantity="0"]::after{
+    contain: "";
+}
+
+#cart-icon[data-quantity]::after{
+    content: attr(data-quantity);
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    color: white;
+    
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Cart */
+.btn-buy{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    width: 50%;
+    text-align: center;
+    border: none;
+    border-radius: 2rem;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+#close-cart{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: var(black);
+    cursor: pointer;
+}
 .breifStyle1 {
     color: white;
     width: 30rem;
@@ -108,7 +194,7 @@ html{
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* About */
+
 .about {
     background-color: black;
     height: 70rem;
@@ -171,7 +257,6 @@ html{
     align-content: center;
     display: flex;
     flex-direction: column;
-    
 }
 
 
@@ -326,3 +411,11 @@ html{
     gap: 1.5rem;
 }
 
+.footer{
+    color: #fff;
+    
+}
+.text-body-secondary {
+    --bs-text-opacity: 1;
+    color: white !important;
+}
