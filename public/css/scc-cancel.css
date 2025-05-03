@@ -1,0 +1,47 @@
+body {
+    background-image: url('/images/bg7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    justify-content: center;
+    /* background-color: black; */
+    min-height: 800px;
+
+}
+
+.sc-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sc-container img{
+    width: 200px;
+    margin: 2rem 0;
+}
+
+.sc-container h1{
+    font-family: "LimeLight";
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+.sc-container p{
+    font-family: "LimeLight";
+    color: white;
+    max-width: 600px;
+    font-size: 0.970rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+.sc-btn{
+    font-family: "LimeLight";
+    padding: 12px 20px;
+    border-radius: 2rem;
+
+    color: white;
+    font-size: 2rem;
+    font-weight: 200;
+}

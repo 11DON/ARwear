@@ -29,13 +29,13 @@ $(document).ready(function(){
         }, 1000);
     })
 });
-
 const smallParag = document.querySelector('.smallParag');
 const phonePic2 = document.querySelector(".phonePic2");
 const slogan =  document.querySelector('.slogan');
-const productBoxs = document.querySelectorAll('.prodcut-box');
+const productBoxs = document.querySelectorAll('.prodcut-box'); // Fixed the typo
 
-const observer = new IntersectionObserver((entries,observer) => {
+// Create an intersection observer
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         console.log("Observed:", entry);
         if(entry.isIntersecting) {
@@ -43,16 +43,26 @@ const observer = new IntersectionObserver((entries,observer) => {
             observer.unobserve(entry.target);
         }
     });
-},{
-    threshold:0.2,
-
+}, {
+    threshold: 0.2
 });
-// // observer.observe(smallParag);
-// observer.observe(phonePic2);
-// observer.observe(slogan);
-productBoxs.forEach(box => {
-    observer.observe(box);
-})
+
+// Check if we're on the correct page
+if (
+    window.location.href === "http://localhost:3000/Home.html" ||
+    window.location.href === "http://localhost:3000/"
+) {
+    // Apply the observer to elements only if they exist
+    if (smallParag) observer.observe(smallParag);
+    if (phonePic2) observer.observe(phonePic2);
+    if (slogan) observer.observe(slogan);
+
+    productBoxs.forEach(box => {
+        if (box) observer.observe(box);
+    });
+} else {
+    console.log("Observer not applied: elements are not available on this page.");
+}
 
 // Cart Open CLose
 let cartIcon = document.querySelector("#cart-icon");
@@ -66,3 +76,11 @@ cartIcon.onclick = () => {
 closeCart.onclick = () => {
   cart.classList.remove("active");
 };
+//  Clear Cart After Successful Payment
+
+function clearCart(){
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    cartContent.innerHTML='';
+    updatePrice();
+    localStorage.removeItem("cartItems");
+  }
