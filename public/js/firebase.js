@@ -158,6 +158,12 @@ function updatePrice() {
   localStorage.setItem("cartTotal", total);
 }
 
+function clearCart(){
+  var cartContent = document.getElementsByClassName('cart-content')[0];
+  cartContent.innerHTML='';
+  updatePrice();
+  localStorage.removeItem("cartItems");
+}
 // Keep Items in Cart When Page Refreshs
 function saveCartItems() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
@@ -229,3 +235,4 @@ function loadCartItems() {
   } else if(window.location.href.includes("suspenders.html")){
     loadProducts("suspenders");
   }
+

@@ -19,7 +19,7 @@ app.use(express.json());
 
 // Home Route
 app.get('/',(req,res)=>{
-    res.sendFile("Home.html",{root:"public"})
+    res.sendFile("index.html",{root:"public"})
 });
 
 

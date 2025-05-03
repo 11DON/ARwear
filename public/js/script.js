@@ -49,7 +49,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 // Check if we're on the correct page
 if (
-    window.location.href === "http://localhost:3000/Home.html" ||
+    window.location.href === "http://localhost:3000/index.html" ||
     window.location.href === "http://localhost:3000/"
 ) {
     // Apply the observer to elements only if they exist
