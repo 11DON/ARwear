@@ -47,9 +47,9 @@ const observer = new IntersectionObserver((entries,observer) => {
     threshold:0.2,
 
 });
-observer.observe(smallParag);
-observer.observe(phonePic2);
-observer.observe(slogan);
+// // observer.observe(smallParag);
+// observer.observe(phonePic2);
+// observer.observe(slogan);
 productBoxs.forEach(box => {
     observer.observe(box);
 })
@@ -66,10 +66,3 @@ cartIcon.onclick = () => {
 closeCart.onclick = () => {
   cart.classList.remove("active");
 };
-// Adding to cart
-// Cart Using JS
-if (document.readyState == "loading") {
-  document.addEventListener("DOMContentLoaded", ready);
-} else {
-  ready();
-}
