@@ -1,0 +1,22 @@
+# Ignore build and temp files
+/build/
+*.log
+*.tmp
+
+# Ignore Flutter/Dart specific files
+.dart_tool/
+.packages
+.flutter-plugins
+pubspec.lock
+
+# Ignore IDE configs
+.idea/
+.vscode/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+.env
+
+js/firebase.js
